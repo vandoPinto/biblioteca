@@ -57,6 +57,9 @@ function fecharIndice() {
 
 /* Carregar e exibir Tela(Slide) */
 function carregarTela(numeroTela) {
+    console.log('disparando evento');
+    document.dispatchEvent(new CustomEvent('destroy'));
+
     let sigla = window.location.pathname.split('/')[(window.location.pathname.split('/').length) - 2];
     let mylocalStorage = localStorage.getItem(`progresso-${sigla}`);
     if (JSON.parse(mylocalStorage)) {
@@ -91,13 +94,13 @@ function narrar() {
             temp = $(val).text();
             let array = $(val)[0].childNodes;
             console.log(Array.from(array));
-            Array.from(array).map((value, index, array) => {
-                // console.log($(value));//.indexOf('nao-narrar')
-                console.log($(value)[0].childNodes);
-                Array.from($(value)[0].childNodes).map((v, i, a) => {
-                    console.log($(v).classLis);
-                })
-            })
+            // Array.from(array).map((value, index, array) => {
+            //     // console.log($(value));//.indexOf('nao-narrar')
+            //     console.log($(value)[0].childNodes);
+            //     // Array.from($(value)[0].childNodes).map((v, i, a) => {
+            //     //     console.log($(v).classLis);
+            //     // })
+            // })
             textoParaNarrar += "\n \n" + $.trim(temp);
         }
         // console.log($(val));

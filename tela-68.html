@@ -127,13 +127,13 @@
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #0D536A;"></footer>
 <script>
     $(() => {
-        const empties = $(document).find('[id^=drop]');
+        const vazios = $(document).find('[id^=drop]');
         let drag;
         let positions = [];
-        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
-        apagarJanelas();
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelasDragDrop);
+        apagarJanelasDragDrop();
 
-        function apagarJanelas() {
+        function apagarJanelasDragDrop() {
             janelas.map((index, janela) => {
                 $(janela).hide();
             })
@@ -143,7 +143,7 @@
             this.className += " hold";
             drag = this;
             setTimeout(() => (this.className = "invisible"), 0);
-            apagarJanelas();
+            apagarJanelasDragDrop();
         };
 
         const dragOver = function (e) {
@@ -179,12 +179,12 @@
             positions[index] = { top: objeto.offsetTop, left: objeto.offsetLeft }
         })
 
-        for (const empty of empties) {
-            empty.addEventListener("dragover", dragOver);
-            empty.addEventListener("dragenter", dragEnter);
-            empty.addEventListener("dragleave", dragLeave);
-            empty.addEventListener("drop", dragDrop);
-        }
+        vazios.map((a, b) => {
+            b.addEventListener("dragover", dragOver);
+            b.addEventListener("dragenter", dragEnter);
+            b.addEventListener("dragleave", dragLeave);
+            b.addEventListener("drop", dragDrop);
+        })
     })
 </script>
 <button onclick="copiarCodigo();" style="width: 140px;height: 30px;position: absolute;right: 20px;top: 13px;">Copiar

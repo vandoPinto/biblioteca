@@ -522,13 +522,12 @@
             positions[index] = { top: objeto.offsetTop, left: objeto.offsetLeft }
         })
 
-        for (const empty of empties) {
-            empty.addEventListener("dragover", dragOver);
-            empty.addEventListener("dragenter", dragEnter);
-            empty.addEventListener("dragleave", dragLeave);
-            empty.addEventListener("drop", dragDrop);
-            voltar.push(null)
-        }
+        empties.map((a, b) => {
+            b.addEventListener("dragover", dragOver);
+            b.addEventListener("dragenter", dragEnter);
+            b.addEventListener("dragleave", dragLeave);
+            b.addEventListener("drop", dragDrop);
+        })
     })
     $(() => {
         let janelas = $(document).find('[id^=janela]')//.on("click", apagarJanelas);
