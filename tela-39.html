@@ -1,148 +1,426 @@
 <style>
-    .zoom:hover {
-        transition: transform .2s;
-        transform: scale(1.2);
-        margin-left: 100px;
+    h2{
+        margin-top: 0;
     }
+
+    .grid-img {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        align-items: baseline;
+        cursor: pointer;
+        width: 80%;
+        gap: 0 10px;
+        padding: 0px;
+        margin: 0 auto;
+    }
+
+    .grid-img p{
+        width: 80%;
+        margin: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .grid-img img{
+        width:100%;
+    }
+
+    .modal-inside{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .modal-inside p{
+        color:#454D77;
+    }
+    .btn-fechar-apre {
+    border: none;
+    padding: 3px 5px;
+    border-radius: 3px;
+    background-color: #2F5579;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+
+}
 </style>
-<div style="width: 1008px;height: 60px;display: flex;background-color: #0D536A;">
-    <p style="position: absolute;color: white;margin-left: 42px;margin-top: 26px;font-size: 12px;">Atividades</p>
+
+
+<div style="display: flex;justify-content: space-between;align-items: center;padding: 30px;">
+    <h1 style="font-size: 24px;">Recursos educacionais: Modal</h1>
 </div>
-<div>
-    <div style="margin-left: 116px;margin-top: 39px;width: 785px;">
-        <p>Vamos conhecer os elementos constitutivos de redes de atenção à saúde? </p>
-        <p>Clique neles para conhecê-los.</p>
+
+
+<div class="coluna-esquerda largura-1_1">
+    <div class="grid-img">
         <div>
-            <div
-                style="width: 661px;height: 273px;background: #3B265D 0% 0% no-repeat padding-box;position: absolute;z-index: -1;margin-top: -11px;margin-left: 90px;">
-            </div>
-            <div
-                style="margin-top: 39px;margin-left: -73px;display: flex;flex-direction: column;justify-content: space-between;height: 261px;">
-                <div id="botao_1" style="width: 300px; height: 55px; margin-left: -50px; cursor: pointer;" class="">
-                    <p
-                        style="text-align: center;font: normal normal bold 12px/18px Poppins;color: #3B265D;position: absolute;margin-left: 93px;">
-                        Pontos de
-                        atenção</p>
-                    <img src="recursos/imgs/Group_2454.svg" style="margin-left: 50px;">
-                </div>
-                <div id="botao_2" style="width: 300px; height: 55px; margin-left: -50px; cursor: pointer;" class="">
-                    <p
-                        style="text-align: center;font: normal normal bold 12px/18px Poppins;color: #3B265D;position: absolute;margin-left: 98px;">
-                        Sistemas de
-                        apoio</p>
-                    <img src="recursos/imgs/Group_2454.svg" style="margin-left: 50px;">
-                </div>
-                <div id="botao_3" style="width: 300px; height: 55px; margin-left: -50px; cursor: pointer;" class="">
-                    <p
-                        style="text-align: center;font: normal normal bold 12px/18px Poppins;color: #3B265D;position: absolute;margin-left: 78px;">
-                        Sistemas de
-                        governança</p>
-                    <img src="recursos/imgs/Group_2454.svg" style="margin-left: 50px;">
-                </div>
-                <div id="botao_4" style="width: 300px; height: 55px; margin-left: -50px; cursor: pointer;" class="">
-                    <p
-                        style="text-align: center;font: normal normal bold 12px/18px Poppins;color: #3B265D;position: absolute;margin-left: 93px;">
-                        Modelo de
-                        atenção</p>
-                    <img src="recursos/imgs/Group_2454.svg" style="margin-left: 50px;">
-                </div>
-            </div>
+          
         </div>
         <div>
-            <div id="janela_1" style="position: absolute; top: 200px; left: 300px; cursor: pointer; display: none;">
-                <p style="text-align: center;font: normal normal bold 16px/18px Poppins;color: #FFFFFF;">Pontos de
-                    atenção</p>
-                <p style="font: normal normal normal 12px/18px Poppins;color: #FFFFFF;width: 526px;">Os pontos de
-                    atenção secundária e terciária realizam a oferta de determinados serviços especializados
-                    e se diferenciam
-                    por suas respectivas densidades tecnológicas, sendo os pontos de atenção terciários os mais
-                    densos
-                    tecnologicamente e,
-                    por isso, tendem a ser mais concentrados espacialmente. Na perspectiva das redes poliárquicas,
-                    defendidas por Mendes
-                    (2010), não há, entre os níveis de atenção, relações de principalidade ou subordinação,
-                    características das relações
-                    hierárquicas, pois todos são igualmente importantes para alcance dos objetivos comuns das redes
-                    de
-                    atenção à saúde.</p>
+            <img src="recursos/imgs/RM_M1_Img15.svg" onclick="openModal1('dv-modal-1')">
+        </div>
+        <div>
+            <img src="recursos/imgs/RM_M1_Img16.svg" onclick="openModal2('dv-modal-2')">
+        </div>
+        <div>
+            <img src="recursos/imgs/RM_M1_Img17.svg" onclick="openModal3('dv-modal-3')">
+        </div>
+        <div>
+           
+        </div>
+        <div>
+           
+        </div>
+
+        <div>
+            <p><strong>Estágio 1</strong><br>Era da Fome das Pestilências</p>
+        </div>
+        <div>
+            <p><strong>Estágio 2</strong><br>Era do Declínio das Pandemias</p>
+        </div>
+        <div>
+            <p><strong>Estágio 3</strong><br>Era das Doenças Degenerativas e das Causadas pelo Homem</p>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="dv-modal-1" class="modal-main">
+    <div style="width: 630px; margin: 103px auto;background-color:#EBF3FA;" class="modal-box">
+        <div class="modal-body">
+            <div class="modal-fechar-x">
+                <button class="btn-fechar-apre" onclick="closeModal1('dv-modal-1')">X</button>
             </div>
-            <div id="janela_2" style="position: absolute; top: 187px; left: 300px; cursor: pointer; display: none;">
-                <p style="text-align: center;font: normal normal bold 16px/18px Poppins;color: #FFFFFF;">Sistemas de
-                    apoio</p>
-                <p style="font: normal normal normal 12px/18px Poppins;color: #FFFFFF;width: 526px;">Os sistemas de
-                    apoio são os lugares institucionais das redes em que se prestam serviços comuns a todos os
-                    pontos de
-                    atenção, nos campos do apoio diagnóstico e terapêutico, da assistência farmacêutica e dos
-                    sistemas
-                    de informação em
-                    saúde (MENDES, 2010).</p>
-                <p style="font: normal normal normal 12px/18px Poppins;color: #FFFFFF;width: 526px;">Deve haver a
-                    existência de serviços de APS dispersos no território em quantidade suficiente e
-                    acesso fácil e de qualidade para atendimento das necessidades; além disso, os demais pontos da
-                    rede,
-                    correspondentes aos
-                    serviços de maior densidade tecnológica e de apoio, devem igualmente estar disponíveis em
-                    condição
-                    ótima de oferta,
-                    necessidade e acesso, fazendo ligações verticais ou horizontais na malha da rede (SILVA, 2008).
-                </p>
-            </div>
-            <div id="janela_3" style="position: absolute; top: 200px; left: 300px; cursor: pointer; display: none;">
-                <p style="text-align: center;font: normal normal bold 16px/18px Poppins;color: #FFFFFF;">Sistemas de
-                    governança</p>
-                <p style="font: normal normal normal 12px/18px Poppins;color: #FFFFFF;width: 526px;">Os sistemas de
-                    governança são definidos por Mendes (2010) como o arranjo organizativo que permite a gestão de
-                    todos
-                    os
-                    componentes da rede, de forma a gerar um excedente cooperativo entre os atores sociais
-                    envolvidos,
-                    aumentar a
-                    interdependência entre eles e obter resultados sanitários e econômicos para a população.</p>
-            </div>
-            <div id="janela_4" style="position: absolute; top: 200px; left: 300px; cursor: pointer; display: none;">
-                <p style="text-align: center;font: normal normal bold 16px/18px Poppins;color: #FFFFFF;">Modelo de
-                    atenção</p>
-                <p style="font: normal normal normal 12px/18px Poppins;color: #FFFFFF;width: 526px;">O modelo de
-                    atenção
-                    é considerado como sistema lógico para o funcionamento das redes de atenção à saúde, articulando
-                    as
-                    relações entre a população, os focos das intervenções do sistema de atenção à saúde e os
-                    diferentes
-                    tipos de
-                    intervenções sanitárias, definidos em função da visão da saúde, das situações demográfica e
-                    epidemiológica e dos
-                    determinantes sociais da saúde, vigentes em determinado tempo e em determinada sociedade
-                    (MENDES,
-                    2010)</p>
+            <div class="modal-inside" style="margin-left: 20px;">
+                <div>
+                    <h1 style="color: #454D77; font-size: 20px;">Estágio 1 – Era da Fome das Pestilências</h1>
+                
+                    <p style="margin-top: 15px; ">
+                        Do início ao fim da Idade Média.
+                    </p>
+                    <p> Altos índices de natalidade.</p>
+                    <p>Altas taxas de mortalidade por doenças infecciosas e ocorrência de endemias e epidemias.</p>
+                    <p>Pandemias devastavam populações.</p>
+                    <p>Expectativa de vida em torno de 20 anos.</p>
+                    <p>Crescimento demográfico lento.</p>
+                    <p></p>
+                </div>
+                <div>
+                    <img src="recursos/imgs/RM_M1_Img15.svg" style="width: 100%;">
+                </div>
             </div>
         </div>
     </div>
 </div>
-<footer style="width: 1008px;height: 19px;display: flex;background-color: #0D536A;"></footer>
+
+
+<div id="dv-modal-2" class="modal-main" style="display: none; opacity: 1;">
+    <div style="width: 630px; margin: 97px auto;background-color:#EBF3FA;" class="modal-box modal-blue9">
+        <div class="modal-body">
+            <div class="modal-fechar-x">
+                <button class="btn-fechar-apre" onclick="closeModal2('dv-modal-2')">X</button>
+            </div>
+            <div class="modal-inside" style="margin-left: 20px;">
+                <div>
+                    <h1 style="color: #454D77; font-size: 20px;">Estágio 2 – Era do Declínio das Pandemias</h1>
+                    <p style="margin-top: 15px;">
+                        Do início da Renascença até o fim da Revolução Industrial.
+                    </p>
+                    <p>Progressiva diminuição das grandes pandemias.</p>
+                    <p>Doenças infecciosas como principal causa de mortes.</p>
+                    <p>Gradual melhora no padrão de vida. </p>
+                    <p>Expectativa de vida de 40 anos.</p>
+                    <p>Queda da mortalidade e alto índice de natalidade.</p>
+                    <p>Longo período de crescimento populacional.</p>
+                </div>
+                <div>
+                    <img src="recursos/imgs/RM_M1_Img16.svg" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dv-modal-3" class="modal-main" style="display: none; opacity: 1;">
+    <div style="width: 630px; background-color: #fff; margin: 92px auto;" class="modal-box">
+        <div class="modal-body">
+            <div class="modal-fechar-x">
+                <button class="btn-fechar-apre" onclick="closeModal3('dv-modal-3')">X</button>
+            </div>
+            <div class="modal-inside" style="margin-left: 20px;">
+                <div>
+                    <h1 style="color: #454D77; font-size: 20px;">Estágio 3 – Era das Doenças Degenerativas e das Causadas pelo Homem</h1>
+                    <p style="margin-top: 15px;">
+                        Revolução Industrial, até meados do século XX.                
+                    </p>
+                    <p>
+                        Progressiva melhora do padrão de vida das populações, advinda de saneamento básico, habitação, alimentação, educação.
+                    </p>
+                    <p> Declínio das doenças infecciosas.</p>
+                    <p>Expectativa de vida acima de 70 anos.</p>
+                    <p>Doenças cardiovasculares e neoplasias.</p>
+                    <p>Desaceleração no crescimento populacional.</p>
+                </div>
+                <div>
+                    <img src="recursos/imgs/RM_M1_Img17.svg" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 <script>
-    $(() => {
-        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
-        apagarJanelas();
-        $(document).find('[id^=btn]').hide();
-        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
-            $(botao).css('cursor', 'pointer');
-            $(botao).hover(() => {
-                $(document).find(`[id=botao_${index + 1}]`).addClass('zoom');
-            });
-            $(botao).mouseleave(() => {
-                $(document).find(`[id=botao_${index + 1}]`).removeClass('zoom');
-            });
-            $(botao).click(() => {
-                apagarJanelas();
-                $(janelas[index]).fadeIn();
-            })
-        })
-        function apagarJanelas() {
-            janelas.map((index, janela) => {
-                $(janela).hide();
-            })
-        }
-    })
+    function openModal1(mS) {
+        let modal = document.getElementById(mS);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal1(mS) {
+        let modal = document.getElementById(mS);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.opacity = 0;
+        }, 0.1);
+
+    }
+
+
+    function openModal2(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal2(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal3(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal3(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal4(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal4(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal5(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal5(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal6(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal6(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal7(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal7(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal8(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal8(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal9(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal9(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
+    function openModal10(mN) {
+        let modal = document.getElementById(mN);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'Block';
+        setTimeout(function() {
+            modal.style.opacity = 1;
+        }, 0.1);
+    }
+
+    function closeModal10(mn) {
+        let modal = document.getElementById(mn);
+
+        if (typeof modal == 'undefined' || modal === null)
+            return;
+
+        modal.style.display = 'none';
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1);
+    }
+
 </script>
-<button onclick="copiarCodigo();" style="width: 140px;height: 30px;position: absolute;right: 20px;top: 13px;">Copiar
-    código</button>
